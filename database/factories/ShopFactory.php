@@ -22,7 +22,7 @@ class ShopFactory extends Factory
         $faker = FakerFactory::create();
         return [
             'name' => $faker->sentence(2),
-            'description' => $faker->sentence(20),
+            'description' => $faker->sentence(15),
             'is_active' => true
         ];
     }

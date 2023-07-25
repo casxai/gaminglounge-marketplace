@@ -27,7 +27,7 @@ return new class extends Migration
 
             $table->string('buyer_first');
             $table->string('buyer_last');
-            $table->string('buyer_email');
+
             $table->string('buyer_phone');
 
 

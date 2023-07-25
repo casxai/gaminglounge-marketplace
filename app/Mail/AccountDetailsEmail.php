@@ -2,9 +2,9 @@
 
 namespace App\Mail;
 
+use Illuminate\Mail\Mailable;
 use App\Models\Listings;
 use Illuminate\Bus\Queueable;
-use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
@@ -44,11 +44,10 @@ class AccountDetailsEmail extends Mailable
      */
     public function content()
     {
-    return new Content(
-        markdown: 'mail.order.account',
-    );
+        return new Content(
+            markdown: 'mail.order.account',
+        );
     }
-
 
     /**
      * Get the attachments for the message.

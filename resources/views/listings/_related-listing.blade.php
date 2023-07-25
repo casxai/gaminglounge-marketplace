@@ -3,12 +3,13 @@
         <div class="section-title-3 text-center mb-50">
             <h2>Related products</h2>
         </div>
-        <div class="product-style">
-            <div class="related-product-active owl-carousel">
+        <div class="related-product-active owl-carousel">
+        @foreach ($relatedProducts as $relatedProduct)
+            <div class="product-style pb-50">
 
-                @foreach ($relatedProducts as $relatedProduct)
                     <div class="product-wrapper">
                         <div class="product-img">
+
                             <a href="{{ route('listings.show', $relatedProduct) }}">
                                 @php
                                     $images = json_decode($relatedProduct->images, true);
@@ -31,16 +32,15 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
                     <div class="product-content">
                         <h4><a href="{{ route('listings.show', $relatedProduct) }}">{{ $relatedProduct->game_name }}</a>
                         </h4>
                         <span>${{ $relatedProduct->price }}</span>
                     </div>
-
+                </div>
+                @endforeach
             </div>
 
-        </div>
     </div>
 </div>
 

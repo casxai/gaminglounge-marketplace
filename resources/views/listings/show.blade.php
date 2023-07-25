@@ -31,6 +31,7 @@
                                     </a>
                                 @endforeach
                             </div>
+
                             <div class="product-details-cati-tag mt-35">
                                 <ul>
                                     <li class="categories-title">Categories :</li>
@@ -61,7 +62,7 @@
                         <h3>{{ $listing->game_name }}</h3>
 
                         <div class="details-price">
-                            <span>${{ $listing->price }}</span><br>
+                            <span>${{ number_format(($listing->price) - ($listing->price * 0.05), 2) }}</span><br>
                             <span style="font-size:15px;">Platform fee: ${{ $listing->price * 0.05 }}</span>
                             <p>{!! $listing->description !!}</p>
                         </div>

@@ -137,7 +137,8 @@
                                                                             {{ $listing->game_name }}
                                                                         </th>
                                                                         <th class="order-total">
-                                                                            <span class="amount">${{ $listing->price }} </span>
+                                                                            <span class="amount">${{ number_format(($listing->price) - ($listing->price * 0.05), 2) }}
+                                                                            </span>
                                                                         </th>
                                                                     </tr>
                                                                 </tbody>
@@ -148,7 +149,7 @@
                                                                     </tr>
                                                                     <tr class="order-total">
                                                                         <th>Order Total</th>
-                                                                        <td><span class="amount">$ {{ number_format($listing->price * 1.05, 2) }}</span>
+                                                                        <td><span class="amount">$ {{ number_format(($listing->price) - ($listing->price * 0.05) + ($listing->price * 0.05), 2)}}</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tfoot>

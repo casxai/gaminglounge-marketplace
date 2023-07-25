@@ -13,7 +13,7 @@ class SubOrderController extends Controller
             'amount_paid'=> $suborder->total_amount,
             'commission'=>  0.05 * $suborder->total_amount
         ]);
-           
+
         return redirect()->to('/admin/transactions')->withMessage('Transaction Created');
     }
 }

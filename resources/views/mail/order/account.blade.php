@@ -1,31 +1,17 @@
 <x-mail::message>
 # Invoice Paid
 
-    Thanks for the purchase
+Thanks for the purchase
 
-    Here is the game acount:
+Here is the game account:
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Game: </th>
-                <th>Username: </th>
-                <th>Password: </th>
+        Game: {{ $listing->game_name }}
+        Username: {{ $listing->account_username }}
+        Password: {{ $listing->account_password }}
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row">{{ $listing->game_name }}</td>
-                <td>{{ $listing->account_username }}</td>
-                <td>{{ $listing->account_password }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    @component('mail::button', ['url' => url('http://gaminglounge.test')])
-   Open Gaming Lounge
-    @endcomponent
+@component('mail::button', ['url' => 'http://gaminglounge.test'])
+Open Gaming Lounge
+@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}

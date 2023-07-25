@@ -1,5 +1,5 @@
 <x-mail::message>
-#Activate Seller Request
+# Activate Seller Request
 
 Please activate seller, here are the details:
 

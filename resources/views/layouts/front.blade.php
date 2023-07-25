@@ -8,10 +8,15 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
+
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
+
     <!-- all css here -->
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/magnific-popup.css">
@@ -24,7 +29,8 @@
     <link rel="stylesheet" href="/assets/css/bundle.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    <script src="/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
 
 
 </head>
@@ -154,13 +160,12 @@
 <body>
 
     <header>
-        @include('partials._message')
-
         <div class="header-top-wrapper-2 border-bottom-2"
             style="height:75px;
             width:100%;
             overflow:hidden;
             cursor:pointer">
+
             <div class="header-info-wrapper pl-200 pr-200 pt-10">
 
                 <div class="header-contact-info">
@@ -169,8 +174,8 @@
                         <li><i class="pe-7s-mail"></i>gaminglounge@glounge.com</li>
                     </ul>
                 </div>
-                <div class="electronics-login-register">
 
+                <div class="electronics-login-register">
                     <ul>
                             @auth
                             <li>
@@ -301,7 +306,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-md-6">s
+                    <div class="col-xl-4 col-md-6">
                         <div class="footer-widget mb-40">
                             <h3 class="footer-widget-title">Contact</h3>
                             <div class="footer-newsletter">
@@ -354,6 +359,7 @@
     </div>
 
 
+
     <!-- all js here -->
     <script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
     <script src="/assets/js/popper.js"></script>
@@ -367,6 +373,15 @@
     <script src="/assets/js/owl.carousel.min.js"></script>
     <script src="/assets/js/plugins.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
+
 </body>
+
+    {{-- @if(Session::has('success'))
+    <script>swal("Payment Successful", "{!! Session::get('success') !!}","success",{
+        button: "Okay"
+    });</script>
+    @endif --}}
 
 </html>

@@ -18,8 +18,7 @@
                                         <th>image</th>
                                         <th>game</th>
                                         <th>Price</th>
-                                        <th>platform Fee</th>
-                                        <th>Total</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,9 +61,9 @@
                                         <td class="product-price-cart"><span class="amount">${{number_format($item->price / 1.05, 2)}}</span></td>
 
                                         {{-- added fee 5% --}}
-                                        <td class="product-price-cart"><span class="amount">${{number_format($item->price - ($item->price / 1.05), 2)}}</span></td>
+                                        {{-- <td class="product-price-cart"><span class="amount">${{number_format($item->price - ($item->price / 1.05), 2)}}</span></td>
 
-                                        <td class="product-subtotal">$165.00</td>
+                                        <td class="product-subtotal">$165.00</td> --}}
                                     </tr>
                                 @endforeach
 

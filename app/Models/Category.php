@@ -40,8 +40,5 @@ class Category extends ModelsCategory
             }
 
             return $allListings;
-
-
-
     }
 }

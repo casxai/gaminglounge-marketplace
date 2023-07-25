@@ -3,15 +3,17 @@
     <div class="categori-menu-slider-wrapper clearfix">
         <div class="categories-menu">
             <div class="category-heading">
-                <h3> All Departments <i class="pe-7s-angle-down"></i></h3>
+                <h3> All categories <i class="pe-7s-angle-down"></i></h3>
             </div>
             <div class="category-menu-list">
                 <ul>
+
                     @foreach ($categories as $category)
                         <li>
                             <a href="{{ route('listings.index', ['category_id' => $category->id]) }}">
                                 {{ $category->name }}<i class="pe-7s-angle-right"></i></a>
                             @php
+
                                 $children = $category->children
                             @endphp
 

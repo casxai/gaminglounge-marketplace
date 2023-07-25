@@ -4,8 +4,6 @@
 
 @include('_category')
 
-
-
         <div class="electro-product-wrapper wrapper-padding pb-45">
             <div class="container-fluid">
                 <div class="section-title-4 text-center mb-40">

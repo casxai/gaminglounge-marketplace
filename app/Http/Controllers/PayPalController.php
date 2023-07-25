@@ -89,21 +89,24 @@ class PayPalController extends Controller
 
                     // Update order's is_paid status
                     $order->is_paid = 1;
+
                     $order->save();
 
                     // Send account details email using the job queue
                     SendAccountDetailsJob::dispatch($listing->id, $buyerEmail);
-                    return redirect()->route('home')->withMessage('Payment Successful');
+
+                    return redirect()->route('home')->with('success','Payment Successful');
 
                     } else {
                         // Handle the case when $listing or $buyerEmail is not found
-                        return redirect()->route('home')->withMessage('Listing or Buyer Email not found! Something went wrong!');
+                        return redirect()->route('home')->with('danger','Listing or Buyer Email not found! Something went wrong!');
                     }
         }
       dd($checkoutData);
     }
 
 }
+
 //    send mail
 //    Mail::to($order->user->email)->send(new OrderPaid($order));
 

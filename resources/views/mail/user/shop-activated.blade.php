@@ -3,7 +3,7 @@
 
 Your shop activation request is approved!
 
-@component('mail::button', ['url' => route('shops.show', $shop->id)])
+@component('mail::button', ['url' => url('http://gaminglounge.test/admin')])
 Visit {{$shop->name}}
 @endcomponent
 

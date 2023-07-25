@@ -3,15 +3,24 @@
 namespace Database\Seeders;
 
 
+use App\Models\User;
+use App\Models\Listings;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Listings;
 
 class ListingsSeeder extends Seeder
 {
 
     public function run(): void
     {
-        Listings::factory()->count(20)->create();
+
+        // Get all users with the "seller" role (assuming "seller" role has id 3)
+        $sellers = User::where('role_id', 3)->get();
+
+        // Create listings for each seller
+            $sellers->each(function ($seller) {
+            Listings::factory()->count(30)->create(['shop_id' => $seller->shop->id]);
+
+        });
     }
 }

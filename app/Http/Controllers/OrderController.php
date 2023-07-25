@@ -29,12 +29,10 @@ class OrderController extends Controller
         $order->buyer_first = $request->input('buyer_first');
         $order->buyer_last = $request->input('buyer_last');
         $order->buyer_phone = $request->input('buyer_phone');
-
         $listingId = $request->input('listing_id');
         $listing = Listings::findOrFail($listingId);
 
         $order->total_amount = $listing->price;
-
 
         $order->user_id = auth()->id();
         $order->listing_id = $listing->id;
@@ -47,11 +45,11 @@ class OrderController extends Controller
         if (request('payment_method') == 'paypal') {
 
             MonitorOrder::dispatch($order)->delay(now()->addMinutes(5));
-
             return redirect()->route('paypal.checkout', ['listing' => $order->listing_id]);
         }
 
-        return redirect()->route('home')->withMessage('Order has been placed');
+
+
     }
     public function checkout(Listings $listing)
     {

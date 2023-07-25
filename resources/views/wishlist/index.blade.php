@@ -52,6 +52,8 @@
                 border: 1px solid transparent;
                 cursor: pointer;
             }
+
+
 </style>
     <body>
         <!--[if lt IE 8]>
