@@ -21,9 +21,9 @@ class MenusTableSeeder extends Seeder
         \DB::table('menus')->insert(array (
             0 => 
             array (
-                'created_at' => '2023-07-16 21:10:56',
                 'id' => 1,
                 'name' => 'admin',
+                'created_at' => '2023-07-16 21:10:56',
                 'updated_at' => '2023-07-16 21:10:56',
             ),
         ));
