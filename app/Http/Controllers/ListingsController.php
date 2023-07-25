@@ -28,22 +28,17 @@ class ListingsController extends Controller
             $listings = $category->allListings();
         }else{
             $listings = Listings::take(10)->get();
-
         }
 
         return view('listings.index', compact('listings', 'categoryName'));
     }
 
-
     public function search(Request $request)
     {
-
-
         $query = $request->input('query');
         $listings = Listings::where('game_name','LIKE',"%$query%")->paginate(10);
 
         // dd($listings);
-
 
         return view('listings.catalog',compact('listings'));
     }
@@ -55,7 +50,7 @@ class ListingsController extends Controller
             $query->whereIn('categories.id', $listing->categories->pluck('id'));
         })
         ->where('id', '!=', $listing->id)
-        ->take(3) // Limit the number of related products to display
+        ->take(4) // Limit the number of related products to display
         ->get();
         return view('listings.show', compact('listing', 'relatedProducts'));
 
